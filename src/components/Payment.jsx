@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
+import Footer from "./Footer";
 
 function Payment() {
   const [width, setWidth] = useState(false);
-  const [payId , setPayId] = useState("");
+  const [payId, setPayId] = useState("");
   const updateWidth = () => {
     setWidth(window.innerWidth);
   };
@@ -15,8 +16,8 @@ function Payment() {
     e.preventDefault();
     if (!payId) {
       alert("Please select a payment method");
-      return
-    };
+      return;
+    }
     window.location.href = `/payment/method`;
   };
 
@@ -34,14 +35,20 @@ function Payment() {
           className="text-white bg-[#07080D] py-6"
         >
           <header className="text-[10px] flex justify-between items-center px-4 sm:px-10 lg:px-32">
-            <img
-              className="w-12 relative -left-3 mix-blend-color-dodge"
-              src="/logo.jpg"
-              alt="logo"
-            />
+            <a className="cursor-pointer" href="/">
+              <img
+                className="w-12 relative -left-3 mix-blend-color-dodge"
+                src="/logo.jpg"
+                alt="logo"
+              />
+            </a>
             <ul className="flex gap-2 sm:gap-12 sec-font">
-              <li>Home</li>
-              <li>DAO Governance</li>
+              <a href="/">
+                <li>Home</li>
+              </a>
+              <a href="/forums">
+                <li>DAO Governance</li>
+              </a>
             </ul>
             <div className="flex gap-4">
               <img src="/opensea.svg" alt="opensea logo" />
@@ -66,7 +73,14 @@ function Payment() {
                 </h2>
                 <div className="flex flex-col-reverse md:flex-row items-start gap-16">
                   <div className="md:w-3/5">
-                    <div onClick={() => handlePay(1)} className={`${payId == 1 ? 'outline-blue-900 outline-2' : 'outline-white'} flex gap-4 items-center justify-start outline outline-1 rounded-2xl p-3 cursor-pointer hover:outline-blue-500`}>
+                    <div
+                      onClick={() => handlePay(1)}
+                      className={`${
+                        payId == 1
+                          ? "outline-blue-900 outline-2"
+                          : "outline-white"
+                      } flex gap-4 items-center justify-start outline outline-1 rounded-2xl p-3 cursor-pointer hover:outline-blue-500`}
+                    >
                       <img
                         className="w-8"
                         src="/computer.svg"
@@ -85,7 +99,14 @@ function Payment() {
                         </p>
                       </div>
                     </div>
-                    <div onClick={() => handlePay(2)} className={`${payId == 2 ? 'outline-blue-900 outline-2' : 'outline-white'} my-8 flex gap-4 items-center justify-start outline outline-1 rounded-2xl p-3 cursor-pointer hover:outline-blue-500`}>
+                    <div
+                      onClick={() => handlePay(2)}
+                      className={`${
+                        payId == 2
+                          ? "outline-blue-900 outline-2"
+                          : "outline-white"
+                      } my-8 flex gap-4 items-center justify-start outline outline-1 rounded-2xl p-3 cursor-pointer hover:outline-blue-500`}
+                    >
                       <img
                         className="w-8"
                         src="/computer.svg"
@@ -104,7 +125,14 @@ function Payment() {
                         </p>
                       </div>
                     </div>
-                    <div onClick={() => handlePay(3)} className={`${payId == 3 ? 'outline-blue-900 outline-2' : 'outline-white'} flex gap-4 items-center justify-start outline outline-1  rounded-2xl p-3 cursor-pointer hover:outline-blue-500`}>
+                    <div
+                      onClick={() => handlePay(3)}
+                      className={`${
+                        payId == 3
+                          ? "outline-blue-900 outline-2"
+                          : "outline-white"
+                      } flex gap-4 items-center justify-start outline outline-1  rounded-2xl p-3 cursor-pointer hover:outline-blue-500`}
+                    >
                       <img
                         className="w-8"
                         src="/computer.svg"
@@ -236,40 +264,7 @@ function Payment() {
             </div>
           </main>
 
-          <footer className="text-[10px] flex justify-between pb-10 items-start px-4 sm:px-10 lg:px-32">
-            <div className="flex gap-2 sm:gap-12 items-start">
-              <img
-                className="w-12 relative -left-3 -top-4 mix-blend-color-dodge"
-                src="/logo.jpg"
-                alt="logo"
-              />
-              <div className="flex gap-2 sm:gap-12">
-                <ul className="flex flex-col gap-3">
-                  <li>Sections</li>
-                  <li>Home</li>
-                  <li>Info</li>
-                  <li>Mint</li>
-                  <li>Governance</li>
-                  <li>Protocol</li>
-                </ul>
-                <ul className="flex flex-col gap-3">
-                  <li>Blog</li>
-                  <li>The difference between Currency and Money</li>
-                  <li>Nature is The Ultimate Healer</li>
-                  <li>
-                    Happiness and Wellbeing by growing your own little Indoor
-                    Garden
-                  </li>
-                  <li>Keep your mind sharp, Train your attention</li>
-                </ul>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <img className="w-7" src="/twitter.svg" alt="twitter logo" />
-              <img src="/discord.svg" alt="discord logo" />
-              <img src="/opensea.svg" alt="opensea logo" />
-            </div>
-          </footer>
+          <Footer />
         </div>
       )}
     </>

@@ -10,3 +10,20 @@ body {
 .sec-font {
     font-family: 'Mulish', sans-serif;
 }
+
+.iframe {
+  zoom: 1.8;
+  left: 0; 
+  right: 0; 
+  margin-left: auto; 
+  margin-right: auto; 
+  width: 200px;
+}
+
+@media screen and (max-width: 1024px) {
+  .iframe {
+   top: 170px;
+   width: 100%;
+  }
+  
+}

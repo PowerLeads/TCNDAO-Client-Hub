@@ -12,6 +12,7 @@ import {
   TabPanels,
   TabPanel,
 } from "@chakra-ui/react";
+import Footer from "./Footer";
 
 function Register() {
   const [width, setWidth] = useState(false);
@@ -33,19 +34,25 @@ function Register() {
           className="text-white bg-[#07080D] py-6"
         >
           <header className="text-[10px] flex justify-between items-center px-4 sm:px-10 lg:px-32">
-            <img
-              className="w-12 relative -left-3 mix-blend-color-dodge"
-              src="/logo.jpg"
-              alt="logo"
-            />
+            <a className="cursor-pointer" href="/">
+              <img
+                className="w-12 relative -left-3 mix-blend-color-dodge"
+                src="/logo.jpg"
+                alt="logo"
+              />
+            </a>
             <ul className="flex gap-2 sm:gap-12 sec-font">
-              <li>Home</li>
-              <li>DAO Governance</li>
+              <a href="/">
+                <li>Home</li>
+              </a>
+              <a href="/forums">
+                <li>DAO Governance</li>
+              </a>
             </ul>
             <div className="flex gap-4">
               <img src="/opensea.svg" alt="opensea logo" />
               <button className="main-font outline outline-[0.7px] rounded-[7px] px-3 py-2">
-                Sign In
+                TCNDAO Protocol
               </button>
             </div>
           </header>
@@ -78,7 +85,7 @@ function Register() {
                 </span>
               </h2>
               <div className="flex flex-col lg:flex-row mx-[40px] rounded-2xl outline-white outline outline-1 lg:px-12 py-10 gap-10 lg:gap-20 items-center">
-                <div className="lg:w-1/2 text-center lg:mb-10 relative -top-5">
+                <div className="lg:w-1/2 text-center lg:mb-10 relative">
                   <img
                     className="mx-auto w-36"
                     src="/wallet.webp"
@@ -113,11 +120,7 @@ function Register() {
                     </h4>
                     <div className="flex justify-center gap-4">
                       <button className="flex items-center gap-2 main-font outline outline-[0.7px] rounded-[7px] px-3 py-2">
-                      <img
-                          className="w-6"
-                          src="/metamask.svg"
-                          alt="logo"
-                        />
+                        <img className="w-6" src="/metamask.svg" alt="logo" />
                         MetaMask
                       </button>
                       <button className="flex items-center main-font outline outline-[0.7px] rounded-[7px] px-3 py-2">
@@ -142,9 +145,6 @@ function Register() {
                     using advanced encryption for guaranteed protection of your
                     data.
                   </p>
-                  <div className="bg-gray-300 h-[170px] rounded-3xl">
-                    {/* video box */}
-                  </div>
                 </div>
               </div>
             </div>
@@ -351,40 +351,7 @@ function Register() {
             </div>
           </main>
 
-          <footer className="text-[10px] flex justify-between pb-10 items-start px-4 sm:px-10 lg:px-32">
-            <div className="flex gap-2 sm:gap-12 items-start">
-              <img
-                className="w-12 relative -left-3 -top-4 mix-blend-color-dodge"
-                src="/logo.jpg"
-                alt="logo"
-              />
-              <div className="flex gap-2 sm:gap-12">
-                <ul className="flex flex-col gap-3">
-                  <li>Sections</li>
-                  <li>Home</li>
-                  <li>Info</li>
-                  <li>Mint</li>
-                  <li>Governance</li>
-                  <li>Protocol</li>
-                </ul>
-                <ul className="flex flex-col gap-3">
-                  <li>Blog</li>
-                  <li>The difference between Currency and Money</li>
-                  <li>Nature is The Ultimate Healer</li>
-                  <li>
-                    Happiness and Wellbeing by growing your own little Indoor
-                    Garden
-                  </li>
-                  <li>Keep your mind sharp, Train your attention</li>
-                </ul>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <img className="w-7" src="/twitter.svg" alt="twitter logo" />
-              <img src="/discord.svg" alt="discord logo" />
-              <img src="/opensea.svg" alt="opensea logo" />
-            </div>
-          </footer>
+          <Footer />
         </div>
       )}
     </>

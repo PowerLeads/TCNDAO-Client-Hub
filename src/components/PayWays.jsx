@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Footer from "./Footer";
 
 function PayWays() {
   const [width, setWidth] = useState(false);
@@ -20,14 +21,20 @@ function PayWays() {
           className="text-white bg-[#07080D] py-6"
         >
           <header className="text-[10px] flex justify-between items-center px-4 sm:px-10 lg:px-32">
-            <img
-              className="w-12 relative -left-3 mix-blend-color-dodge"
-              src="/logo.jpg"
-              alt="logo"
-            />
+            <a className="cursor-pointer" href="/">
+              <img
+                className="w-12 relative -left-3 mix-blend-color-dodge"
+                src="/logo.jpg"
+                alt="logo"
+              />
+            </a>
             <ul className="flex gap-2 sm:gap-12 sec-font">
-              <li>Home</li>
-              <li>DAO Governance</li>
+              <a href="/">
+                <li>Home</li>
+              </a>
+              <a href="/forums">
+                <li>DAO Governance</li>
+              </a>
             </ul>
             <div className="flex gap-4">
               <img src="/opensea.svg" alt="opensea logo" />
@@ -51,44 +58,43 @@ function PayWays() {
                   Choose How You Pay
                 </h2>
                 <div>
-                    <div className="rounded-2xl outline outline-1 outline-white py-8 text-center flex flex-col items-center gap-8">
-                      <h3 className="text-[22px] font-bold bg-gradient-to-r from-[#39F056] to-[#8ED3ED] bg-clip-text text-transparent">
-                        Pay Securely With GMD
-                      </h3>
-                      <button className="main-font outline outline-[0.7px] rounded-[7px]  px-6 py-2">
-                        Pay $amount with GMD
-                      </button>
-                      <button className="main-font outline outline-[0.7px] rounded-[7px] w-4/5 md:w-[400px] py-2">
-                        GMD Address Example
-                      </button>
-                    </div>
-                    <div className="my-12 rounded-2xl outline outline-1 outline-white py-8 text-center flex flex-col items-center gap-8">
-                      <h3 className="text-[22px] font-bold bg-gradient-to-r from-[#39F056] to-[#8ED3ED] bg-clip-text text-transparent">
-                        Pay Securely With USDC
-                      </h3>
-                      <button className="main-font outline outline-[0.7px] rounded-[7px] px-6 py-2">
-                        Pay $amount with USDC
-                      </button>
-                      <button className="main-font outline outline-[0.7px] rounded-[7px] w-4/5 md:w-[400px] py-2">
-                        USDC Address Example
-                      </button>
-                    </div>
-                    <div className="rounded-2xl outline outline-1 outline-white py-8 text-center flex flex-col items-center gap-8">
-                      <h3 className="text-[22px] font-bold bg-gradient-to-r from-[#39F056] to-[#8ED3ED] bg-clip-text text-transparent">
-                        Pay Securely With COOP
-                      </h3>
-                      <button className="bg-gradient-to-r from-[#39F056] to-[#8ED3ED] bg-clip-text text-transparent main-font font-bold outline outline-[0.7px] outline-white rounded-[7px] px-6 py-2">
-                        COMING SOON
-                      </button>
-                      <button className="main-font outline outline-[0.7px] rounded-[7px] px-5 py-2">
-                        Check Other Payment Methods
-                      </button>
-                    </div>
+                  <div className="rounded-2xl outline outline-1 outline-white py-8 text-center flex flex-col items-center gap-8">
+                    <h3 className="text-[22px] font-bold bg-gradient-to-r from-[#39F056] to-[#8ED3ED] bg-clip-text text-transparent">
+                      Pay Securely With GMD
+                    </h3>
+                    <button className="main-font outline outline-[0.7px] rounded-[7px]  px-6 py-2">
+                      Pay $amount with GMD
+                    </button>
+                    <button className="main-font outline outline-[0.7px] rounded-[7px] w-4/5 md:w-[400px] py-2">
+                      GMD Address Example
+                    </button>
+                  </div>
+                  <div className="my-12 rounded-2xl outline outline-1 outline-white py-8 text-center flex flex-col items-center gap-8">
+                    <h3 className="text-[22px] font-bold bg-gradient-to-r from-[#39F056] to-[#8ED3ED] bg-clip-text text-transparent">
+                      Pay Securely With USDC
+                    </h3>
+                    <button className="main-font outline outline-[0.7px] rounded-[7px] px-6 py-2">
+                      Pay $amount with USDC
+                    </button>
+                    <button className="main-font outline outline-[0.7px] rounded-[7px] w-4/5 md:w-[400px] py-2">
+                      USDC Address Example
+                    </button>
+                  </div>
+                  <div className="rounded-2xl outline outline-1 outline-white py-8 text-center flex flex-col items-center gap-8">
+                    <h3 className="text-[22px] font-bold bg-gradient-to-r from-[#39F056] to-[#8ED3ED] bg-clip-text text-transparent">
+                      Pay Securely With COOP
+                    </h3>
+                    <button className="bg-gradient-to-r from-[#39F056] to-[#8ED3ED] bg-clip-text text-transparent main-font font-bold outline outline-[0.7px] outline-white rounded-[7px] px-6 py-2">
+                      COMING SOON
+                    </button>
+                    <button className="main-font outline outline-[0.7px] rounded-[7px] px-5 py-2">
+                      Check Other Payment Methods
+                    </button>
+                  </div>
                   <div className="flex justify-center pt-8 pb-4">
-
-                  <button className="bg-gradient-to-r from-[#39F056] to-[#8ED3ED] bg-clip-text text-transparent main-font font-bold outline outline-[0.7px] outline-white rounded-[7px] px-6 py-2">
-                        Become A Member
-                      </button>
+                    <button className="bg-gradient-to-r from-[#39F056] to-[#8ED3ED] bg-clip-text text-transparent main-font font-bold outline outline-[0.7px] outline-white rounded-[7px] px-6 py-2">
+                      Become A Member
+                    </button>
                   </div>
                 </div>
               </div>
@@ -137,40 +143,7 @@ function PayWays() {
             </div>
           </main>
 
-          <footer className="text-[10px] flex justify-between pb-10 items-start px-4 sm:px-10 lg:px-32">
-            <div className="flex gap-2 sm:gap-12 items-start">
-              <img
-                className="w-12 relative -left-3 -top-4 mix-blend-color-dodge"
-                src="/logo.jpg"
-                alt="logo"
-              />
-              <div className="flex gap-2 sm:gap-12">
-                <ul className="flex flex-col gap-3">
-                  <li>Sections</li>
-                  <li>Home</li>
-                  <li>Info</li>
-                  <li>Mint</li>
-                  <li>Governance</li>
-                  <li>Protocol</li>
-                </ul>
-                <ul className="flex flex-col gap-3">
-                  <li>Blog</li>
-                  <li>The difference between Currency and Money</li>
-                  <li>Nature is The Ultimate Healer</li>
-                  <li>
-                    Happiness and Wellbeing by growing your own little Indoor
-                    Garden
-                  </li>
-                  <li>Keep your mind sharp, Train your attention</li>
-                </ul>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <img className="w-7" src="/twitter.svg" alt="twitter logo" />
-              <img src="/discord.svg" alt="discord logo" />
-              <img src="/opensea.svg" alt="opensea logo" />
-            </div>
-          </footer>
+          <Footer />
         </div>
       )}
     </>

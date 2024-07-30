@@ -12,6 +12,7 @@ import {
   TabPanels,
   TabPanel,
 } from "@chakra-ui/react";
+import Footer from "./Footer";
 
 function Home() {
   const [width, setWidth] = useState(false);
@@ -33,14 +34,20 @@ function Home() {
           className="text-white bg-[#07080D] py-6"
         >
           <header className="text-[10px] flex justify-between items-center px-4 sm:px-10 lg:px-32">
-            <img
-              className="w-12 relative -left-3 mix-blend-color-dodge"
-              src="/logo.jpg"
-              alt="logo"
-            />
+            <a className="cursor-pointer" href="/">
+              <img
+                className="w-12 relative -left-3 mix-blend-color-dodge"
+                src="/logo.jpg"
+                alt="logo"
+              />
+            </a>
             <ul className="flex gap-2 sm:gap-12 sec-font">
-              <li>Home</li>
-              <li>DAO Governance</li>
+              <a href="/">
+                <li>Home</li>
+              </a>
+              <a href="/forums">
+                <li>DAO Governance</li>
+              </a>
             </ul>
             <div className="flex gap-4">
               <img src="/opensea.svg" alt="opensea logo" />
@@ -55,7 +62,8 @@ function Home() {
             <div className="my-20 mb-20 bg-[url('/hero-bg.png')] px-10 lg:px-32">
               <div className="sm:w-[430px] relative z-20">
                 <h2 className="main-font text-[22px] font-semibold">
-                  The Coop Network DAO <br/> A Decentralised Finance Ecosystem for a <br />
+                  The Coop Network DAO <br /> A Decentralised Finance Ecosystem
+                  for a <br />
                   <span className="bg-gradient-to-r from-[#39F056] to-[#8ED3ED] bg-clip-text text-transparent">
                     New Generation
                   </span>
@@ -63,9 +71,6 @@ function Home() {
                 <p className="text-[12px] my-4 sec-font">
                   Moving towards decentralisation one step at a time
                 </p>
-                <button className="text-[12px] bg-green-700 py-2 px-4 rounded-md">
-                  Become a member
-                </button>
               </div>
               <div className="md:flex hidden items-center absolute right-0 sm:right-4 lg:right-12 top-[440px] sm:top-[250px] lg:top-28">
                 <img
@@ -86,10 +91,14 @@ function Home() {
               </div>
               <img className="invisible" src="Ellipse1.svg" alt="" />
             </div>
-            <img className="top-[350px] hidden lg:block absolute" src="Ellipse1.svg" alt="" />
+            <img
+              className="top-[350px] hidden lg:block absolute"
+              src="Ellipse1.svg"
+              alt=""
+            />
 
             {/* app section */}
-            <div className="mb-20 lg:mb-32 px-10 lg:px-32">
+            <div className="relative mb-20 lg:mb-32 px-10 lg:px-32">
               <h3 className="text-center text-[20px] font-bold mb-10">
                 Download the{" "}
                 <span className="bg-gradient-to-r from-[#39F056] to-[#8ED3ED] bg-clip-text text-transparent">
@@ -101,12 +110,19 @@ function Home() {
               <div className="flex py-10 gap-8 flex-col lg:flex-row w-full lg:w-[700px] mx-auto overflow-hidden lg:justify-between px-5 text-center bg-gradient-to-b lg:bg-gradient-to-r from-[#008215] via-[#090A10] to-[#008215] text-[12px] items-center rounded-xl">
                 <div className="flex flex-col gap-6 sec-font">
                   <p>Get Started Today</p>
-                  <button className="text-black rounded-full bg-white py-1 px-12">
-                    Mint Now
-                  </button>
+                  <a href="/register">
+                    <button className="text-black rounded-full bg-white py-1 px-12">
+                      Mint Now
+                    </button>
+                  </a>
                   <p>See Traits on the back of your card</p>
                 </div>
-                <img className="w-52" src="G-Man-cropped.png" alt="" />
+                <img className="invisible" src="G-Man-cropped.png" alt="" />
+                <iframe
+                  className="absolute iframe"
+                  src="https://nft-dao.thecoopnetwork.io/member"
+                  frameborder="0"
+                ></iframe>
                 <div className="flex flex-col items-center">
                   <p className="sec-font">Download The COOP Wallet From</p>
                   <img
@@ -327,7 +343,7 @@ function Home() {
             </div>
 
             {/* blog section */}
-            <div className="mb-20 lg:mb-32 px-10 lg:px-32">
+            {/* <div className="mb-20 lg:mb-32 px-10 lg:px-32">
               <h2 className="text-[30px] font-semibold text-center mb-8">
                 Check out our latest blog posts
               </h2>
@@ -392,7 +408,7 @@ function Home() {
                   </TabPanel>
                 </TabPanels>
               </Tabs>
-            </div>
+            </div> */}
 
             {/* mint section */}
             <div className="mb-20 lg:mb-32">
@@ -402,10 +418,15 @@ function Home() {
               <p className="text-center mb-5 sec-font">
                 Your journey starts today and you will be in good company
               </p>
-              <div style={{height : width < 1200 ? 23 * width / 100 : ""}} className="bg-cover bg-no-repeat bg-[url('/mint-bg.png')] flex justify-center items-center mx-auto w-4/5 lg:w-[790px] lg:h-[230px] mb-20">
-                <button className="bg-green-900 relative bottom-0 lg:bottom-0 px-3 py-1 rounded-[8px]">
-                  Mint now
-                </button>
+              <div
+                style={{ height: width < 1200 ? (23 * width) / 100 : "" }}
+                className="bg-cover bg-no-repeat bg-[url('/mint-bg.png')] flex justify-center items-center mx-auto w-4/5 lg:w-[790px] lg:h-[230px] mb-20"
+              >
+                <a href="/register">
+                  <button className="bg-green-900 relative bottom-0 lg:bottom-0 px-3 py-1 rounded-[8px]">
+                    Mint now
+                  </button>
+                </a>
               </div>
               <div className="flex px-10 lg:w-[500px] mx-auto gap-12 items-center">
                 <div className="text-center">
@@ -447,37 +468,7 @@ function Home() {
               </div>
             </div>
           </main>
-          <footer className="text-[10px] flex justify-between pb-10 items-start px-4 sm:px-10 lg:px-32">
-            <div className="flex gap-2 sm:gap-12 items-start">
-              <img
-                className="w-12 relative -left-3 -top-4 mix-blend-color-dodge"
-                src="/logo.jpg"
-                alt="logo"
-              />
-              <div className="flex gap-2 sm:gap-12">
-                <ul className="flex flex-col gap-3">
-                  <li>Sections</li>
-                  <li>Home</li>
-                  <li>Info</li>
-                  <li>Mint</li>
-                  <li>Governance</li>
-                  <li>Protocol</li>
-                </ul>
-                <ul className="flex flex-col gap-3">
-                  <li>Blog</li>
-                  <li>The difference between Currency and Money</li>
-                  <li>Nature is The Ultimate Healer</li>
-                  <li>Happiness and Wellbeing by growing your own little Indoor Garden</li>
-                  <li>Keep your mind sharp, Train your attention</li>
-                </ul>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <img className="w-7" src="/twitter.svg" alt="twitter logo" />
-              <img src="/discord.svg" alt="discord logo" />
-              <img src="/opensea.svg" alt="opensea logo" />
-            </div>
-          </footer>
+          <Footer />
         </div>
       )}
     </>

@@ -11,6 +11,7 @@ import {
   AccordionIcon,
   Button,
 } from "@chakra-ui/react";
+import Footer from "./Footer";
 
 function Forums() {
   const [width, setWidth] = useState(false);
@@ -33,14 +34,20 @@ function Forums() {
           className="text-white bg-[#07080D] py-6"
         >
           <header className="text-[10px] flex justify-between items-center px-4 sm:px-10 lg:px-32">
-            <img
-              className="w-12 relative -left-3 mix-blend-color-dodge"
-              src="/logo.jpg"
-              alt="logo"
-            />
+            <a className="cursor-pointer" href="/">
+              <img
+                className="w-12 relative -left-3 mix-blend-color-dodge"
+                src="/logo.jpg"
+                alt="logo"
+              />
+            </a>
             <ul className="flex gap-2 sm:gap-12 sec-font">
-              <li>Home</li>
-              <li>DAO Governance</li>
+              <a href="/">
+                <li>Home</li>
+              </a>
+              <a href="/forums">
+                <li>DAO Governance</li>
+              </a>
             </ul>
             <div className="flex gap-4">
               <img src="/opensea.svg" alt="opensea logo" />
@@ -200,40 +207,7 @@ function Forums() {
             </div>
           </main>
 
-          <footer className="text-[10px] flex justify-between pb-10 items-start px-4 sm:px-10 lg:px-32">
-            <div className="flex gap-2 sm:gap-12 items-start">
-              <img
-                className="w-12 relative -left-3 -top-4 mix-blend-color-dodge"
-                src="/logo.jpg"
-                alt="logo"
-              />
-              <div className="flex gap-2 sm:gap-12">
-                <ul className="flex flex-col gap-3">
-                  <li>Sections</li>
-                  <li>Home</li>
-                  <li>Info</li>
-                  <li>Mint</li>
-                  <li>Governance</li>
-                  <li>Protocol</li>
-                </ul>
-                <ul className="flex flex-col gap-3">
-                  <li>Blog</li>
-                  <li>The difference between Currency and Money</li>
-                  <li>Nature is The Ultimate Healer</li>
-                  <li>
-                    Happiness and Wellbeing by growing your own little Indoor
-                    Garden
-                  </li>
-                  <li>Keep your mind sharp, Train your attention</li>
-                </ul>
-              </div>
-            </div>
-            <div className="flex gap-4">
-              <img className="w-7" src="/twitter.svg" alt="twitter logo" />
-              <img src="/discord.svg" alt="discord logo" />
-              <img src="/opensea.svg" alt="opensea logo" />
-            </div>
-          </footer>
+          <Footer />
         </div>
       )}
     </>
